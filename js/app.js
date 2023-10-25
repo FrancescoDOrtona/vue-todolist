@@ -4,8 +4,11 @@ createApp({
     data() {
         return {
             logoPath: "./img/Logo.png",
-            newTask: '',
+            newTask: {
+                text: ''
+            },
             currentIndex: 0,
+            error: false,
             tasks: [
                 {
                     text: 'Fare i compiti',
@@ -25,8 +28,14 @@ createApp({
     methods: {
         addTask() {
 
+            if (this.newTask.text.length >= 5) {
+                this.tasks.unshift(this.newTask)
+                this.newTask = { text: ''}
+                this.error = false
+            } else {
+                this.error = true
+            }
 
-            
         }
     },
 }).mount('#app')

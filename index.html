@@ -14,9 +14,9 @@
         </div>
       
         <div class="new-task">
-            <input type="text" placeholder="Nuova Task" v-model="nexTask">
-            <button>Aggiungi</button>
-            <div class="error">
+            <input type="text" placeholder="Nuova Task" v-model="newTask.text">
+            <button @click="addTask()" >Aggiungi</button>
+            <div v-if="error" class="error">
                 <p>Devi inserire almeno 5 caratteri</p>
             </div>
         </div>
