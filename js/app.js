@@ -5,7 +5,8 @@ createApp({
         return {
             logoPath: "./img/Logo.png",
             newTask: {
-                text: ''
+                text: '',
+                done: false
             },
             currentIndex: 0,
             error: false,
@@ -37,9 +38,9 @@ createApp({
             }
 
         },
-
+        
         removeTask(taskIndex){
             this.tasks.splice(taskIndex, 1)
-        }
+        },
     },
 }).mount('#app')
