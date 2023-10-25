@@ -36,6 +36,10 @@ createApp({
                 this.error = true
             }
 
+        },
+
+        removeTask(taskIndex){
+            this.tasks.splice(taskIndex, 1)
         }
     },
 }).mount('#app')

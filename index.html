@@ -25,7 +25,7 @@
             <ul v-if="tasks.length > 0">
                 <li class="task" v-for="(task, index) in tasks" :key="index">
                     {{ task.text }}
-                    <i class="fa-solid fa-xmark"></i>
+                    <i @click="removeTask(index)" class="fa-solid fa-xmark"></i>
                 </li>
             </ul>
             <h3 v-else>Non ci sono tasks</h3>
