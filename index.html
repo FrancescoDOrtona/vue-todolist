@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bfd5138bab.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Vue to do list</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+      
+        <div class="new-task">
+            <input type="text" placeholder="Nuova Task">
+            <button>Aggiungi</button>
+            <div class="error">
+                <p>Devi inserire almeno 5 caratteri</p>
+            </div>
+        </div>
+
+        <div class="tasks-container">
+            <ul>
+                <li>
+                    <span>Fare la spesa</span>
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+            </ul>
+            <h3>Non ci sono tasks</h3>
+        </div>
+
+    </div>
+
+   
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
