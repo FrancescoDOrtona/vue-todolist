@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bfd5138bab.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Vue to do list</title>
 </head>
@@ -14,8 +17,8 @@
         </div>
       
         <div class="new-task">
-            <input type="text" placeholder="Nuova Task" v-model="newTask.text" @keyup.enter="addTask()">
-            <button @click="addTask()" >Aggiungi</button>
+            <input class="add-task" type="text" placeholder="Nuova Task" v-model="newTask.text" @keyup.enter="addTask()">
+            <button class="btn" @click="addTask()" >Aggiungi</button>
             <div v-if="error" class="error">
                 <p>Devi inserire almeno 5 caratteri</p>
             </div>

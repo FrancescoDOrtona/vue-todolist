@@ -8,8 +8,12 @@ ul, ol, menu{
     list-style: none;
 }
 
+html{
+    font-family: 'Tilt Neon', sans-serif;
+}
+
 body{
-    background-color: cadetblue;
+    background-image: url(../img/stacked-waves-haikei.svg);
 }
 
 .container{
@@ -22,10 +26,55 @@ body{
 }
 
 .tasks-container{
-    max-width: 600px;
+    width: 500px;
     margin: 0 auto;
+    min-height: 200px;
+    background-color:cornflowerblue;
+    border-radius: 20px;
 }
 
 .error{
     color: red;
+    padding: 10px;
+    
+}
+
+/* logo */
+.logo img{
+    width: 60px;
+}
+
+.logo{
+    margin-top: 25px;
+}
+
+/* new task */
+
+.new-task{
+    text-align: center;
+}
+
+.add-task{
+    padding: 12px 18px;
+    border-radius: 15px;
+}
+
+.btn{
+    padding: 12px;
+    border-radius: 15px;
+    margin-left: 15px;
+}
+
+/* tasks */
+
+.task{
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+}
+
+.task:last-child{
+    border-bottom: none;
 }
