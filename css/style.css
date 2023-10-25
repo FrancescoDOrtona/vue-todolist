@@ -8,6 +8,10 @@ ul, ol, menu{
     list-style: none;
 }
 
+body{
+    background-color: cadetblue;
+}
+
 .container{
     max-width: 800px;
     margin: 0 auto;

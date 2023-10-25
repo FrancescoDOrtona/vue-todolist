@@ -5,7 +5,8 @@ createApp({
         return {
             logoPath: "./img/Logo.png",
             newTask: '',
-            todos: [
+            currentIndex: 0,
+            tasks: [
                 {
                     text: 'Fare i compiti',
                     done: false
@@ -19,6 +20,13 @@ createApp({
                     done: false
                 }
             ]
+        }
+    },
+    methods: {
+        addTask() {
+
+
+            
         }
     },
 }).mount('#app')

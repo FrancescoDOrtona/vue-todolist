@@ -10,11 +10,11 @@
 <body>
     <div id="app" class="container">
         <div class="logo">
-            <img src="./img/Logo.png" alt="">
+            <img :src="logoPath" alt="">
         </div>
       
         <div class="new-task">
-            <input type="text" placeholder="Nuova Task">
+            <input type="text" placeholder="Nuova Task" v-model="nexTask">
             <button>Aggiungi</button>
             <div class="error">
                 <p>Devi inserire almeno 5 caratteri</p>
@@ -22,13 +22,13 @@
         </div>
 
         <div class="tasks-container">
-            <ul>
-                <li>
-                    <span>Fare la spesa</span>
+            <ul v-if="tasks.length > 0">
+                <li class="task" v-for="(task, index) in tasks" :key="index">
+                    {{ task.text }}
                     <i class="fa-solid fa-xmark"></i>
                 </li>
             </ul>
-            <h3>Non ci sono tasks</h3>
+            <h3 v-else>Non ci sono tasks</h3>
         </div>
 
     </div>
