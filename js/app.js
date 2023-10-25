@@ -31,7 +31,7 @@ createApp({
 
             if (this.newTask.text.length >= 5) {
                 this.tasks.unshift(this.newTask)
-                this.newTask = { text: ''}
+                this.newTask = { text: '', done: false}
                 this.error = false
             } else {
                 this.error = true
