@@ -28,7 +28,6 @@ body{
 .tasks-container{
     width: 500px;
     margin: 0 auto;
-    min-height: 200px;
     background-color:cornflowerblue;
     border-radius: 20px;
 }
