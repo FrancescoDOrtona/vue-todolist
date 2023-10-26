@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/bfd5138bab.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/bfd5138bab.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Vue to do list</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app" class="container">
-        <div class="logo">
-            <img :src="logoPath" alt="">
-        </div>
-      
-        <div class="new-task">
-            <input class="add-task" type="text" placeholder="Nuova Task" v-model="newTask.text" @keyup.enter="addTask()">
-            <button class="btn" @click="addTask()" >Aggiungi</button>
-            <div v-if="error" class="error">
-                <p>Devi inserire almeno 5 caratteri</p>
-            </div>
-        </div>
+      <div class="logo">
+        <img :src="logoPath" alt="" />
+      </div>
 
-        <div class="tasks-container">
-            <ul v-if="tasks.length > 0">
-                <li class="task" v-for="(task, index) in tasks" :key="index">
-                    {{ task.text }}
-                    <i @click="removeTask(index)" class="fa-solid fa-xmark"></i>
-                </li>
-            </ul>
-            <h3 v-else>Non ci sono tasks</h3>
+      <div class="new-task">
+        <input
+          class="add-task"
+          type="text"
+          placeholder="Nuova Task"
+          v-model="newTask.text"
+          @keyup.enter="addTask()"
+        />
+        <button class="btn" @click="addTask()">Aggiungi</button>
+        <div v-if="error" class="error">
+          <p>Devi inserire almeno 5 caratteri</p>
         </div>
+      </div>
 
+      <div class="tasks-container">
+        <ul v-if="tasks.length > 0">
+          <li
+            class="task"
+            v-for="(task, index) in tasks"
+            :key="index"
+            :class="{'done': task.done}"
+          >
+            <span class="task-text">{{ task.text }}</span>
+            <i @click="removeTask(index)" class="fa-solid fa-circle-xmark"></i>
+          </li>
+        </ul>
+        <h3 v-else>Non ci sono tasks</h3>
+      </div>
     </div>
-
-   
-
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/app.js"></script>
-</body>
+  </body>
 </html>

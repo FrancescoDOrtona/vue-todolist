@@ -78,3 +78,7 @@ body{
 .task:last-child{
     border-bottom: none;
 }
+
+.task.done .task-text{
+    text-decoration: line-through;
+}
