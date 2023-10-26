@@ -27,7 +27,7 @@
           class="add-task"
           type="text"
           placeholder="Nuova Task"
-          v-model="newTask.text"
+          v-model.trim="newTask.text"
           @keyup.enter="addTask()"
         />
         <button class="btn" @click="addTask()">Aggiungi</button>
@@ -43,9 +43,10 @@
             v-for="(task, index) in tasks"
             :key="index"
             :class="{'done': task.done}"
+            @click="toogleTask(task)"
           >
             <span class="task-text">{{ task.text }}</span>
-            <i @click="removeTask(index)" class="fa-solid fa-circle-xmark"></i>
+            <i @click.stop="removeTask(index)" class="fa-solid fa-circle-xmark"></i>
           </li>
         </ul>
         <h3 v-else>Non ci sono tasks</h3>

@@ -42,5 +42,8 @@ createApp({
         removeTask(taskIndex){
             this.tasks.splice(taskIndex, 1)
         },
+        toogleTask(task){
+            task.done = !task.done
+        }
     },
 }).mount('#app')
